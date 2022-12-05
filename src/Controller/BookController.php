@@ -22,7 +22,12 @@ class BookController extends AbstractController
         return $this->render('book/index.html.twig', []);
     }
 
-    #[Route('/books', name: "display_books")]
+
+    /**
+     * Matches /blog/*
+     *
+     * @Route("/books", name="display_books")
+     */
     public function displayCars(ManagerRegistry $doctrine, LoggerInterface $logger): Response
     {
         $bookService = new BookService($doctrine->getManager(), Book::class);
