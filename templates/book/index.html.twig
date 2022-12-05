@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Меню {% endblock %}
+
+{% block body %}
+<style>
+    .outter-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+</style>
+
+<div class="outter-wrapper">
+    <h1>Привет!✅ Это меню приложения! </h1>
+    <h5>Чтобы перейти на страницу со списком книг нажмите на <a href="/books" class="btn btn-light">эту кнопку</a> </h5>
+    <h5>Чтобы добавить новую запись в список книг нажмите на <a href="/book" class="btn btn-light">эту кнопку</a> </h5>
+
+</div>
+{% endblock %}

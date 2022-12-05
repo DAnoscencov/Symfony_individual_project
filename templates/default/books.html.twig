@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title%} Список книг {% endblock %}
+
+{% block body %}
+
+  {% if books %}
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+		  <th>Genre</th>
+          <th>Author</th>
+		  <th>Year</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%  for book in books %}
+          <tr>
+            <td>{{ book.name }}</td>
+            <td>{{ book.genreId.name }}</td>
+			<td>{{ book.author }}</td>
+			<td>{{ book.year }}</td>
+            <td>
+              <a href="/book/{{ book.id }}" class="btn btn-dark">Show</a>
+            </td>
+            <td>
+              <a href="/book/update/{{ book.id }}" class="btn btn-info">Update</a>
+            </td>
+            <td>
+              <a href="/book/delete/{{ book.id }}" class="btn btn-danger">Delete</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+	<form action="/book">
+   		 <input type="submit" value="Создать запись" />
+	</form>
+  {% else %}
+  {% endif %}
+
+{% endblock %}

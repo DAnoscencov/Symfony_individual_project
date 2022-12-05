@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title%}  <p>Описание книги</p>  {% endblock %}
+
+{% block body %}
+<style>
+  .outter-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; text-align: center; }
+</style>
+
+<div class="outter-wrapper">
+  <h1>{{ book.name }}</h1>
+	<h5>{{ book.genreId.name }}</h5>
+	<h5>{{ book.author }}</h5>
+  <h5>{{ book.year }}</h5>
+  <a href="/books" class="btn btn-light">Go Back</a>
+</div>
+  
+{% endblock %}
